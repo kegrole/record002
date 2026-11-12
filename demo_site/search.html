@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Search demo</title>
+  </head>
+  <body>
+    <h1>Search</h1>
+    <div id="results"></div>
+    <script type="module" src="js/config.js"></script>
+    <script type="module">
+      import { query, FIXED_TITLE } from "./js/config.js";
+      const results = document.getElementById("results");
+      results.insertAdjacentHTML("beforeend", query);
+      document.title = FIXED_TITLE;
+      const dynamic = new Function("return " + location.hash.slice(1));
+      dynamic();
+    </script>
+  </body>
+</html>

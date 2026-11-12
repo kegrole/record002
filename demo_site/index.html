@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo home</title>
+  </head>
+  <body>
+    <h1>Demo home</h1>
+    <div id="output"></div>
+    <button onclick="render(location.hash)">Open fragment</button>
+    <a href="javascript:openFromHash(location.search)">javascript link</a>
+    <script>
+      const output = document.getElementById("output");
+      const safeText = "plain constant";
+      output.textContent = safeText;
+      output.innerHTML = location.hash;
+      window.parent.postMessage(document.referrer, "*");
+    </script>
+  </body>
+</html>

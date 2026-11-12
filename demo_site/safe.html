@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Safe demo</title>
+  </head>
+  <body>
+    <div id="safe"></div>
+    <script>
+      // All sinks below receive constants and must not be reported.
+      const userInput = "hello";
+      eval(userInput);
+      document.getElementById("safe").innerHTML = "<em>fixed</em>";
+      setTimeout(function () { console.log("constant timer"); }, 100);
+    </script>
+  </body>
+</html>
